@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -49,13 +50,63 @@ public class MainActivity extends AppCompatActivity {
         btnAddition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double oper1 = Double.parseDouble(operand1.getText().toString());
-                double oper2 = Double.parseDouble(operand2.getText().toString());
+                if ((operand1.getText().length() > 0) && (operand2.getText().length() > 0)) {
+                    double oper1 = Double.parseDouble(operand1.getText().toString());
+                    double oper2 = Double.parseDouble(operand2.getText().toString());
 
-                double result = oper1 + oper2;
-                txtResult.setText(Double.toString(result));
+                    double result = oper1 + oper2;
+                    txtResult.setText(Double.toString(result));
+                } else {
+                    Toast.makeText(MainActivity.this, "Please enter numbers in both operator fields", Toast.LENGTH_LONG).show();
+                }
             }
         });
+
+        btnSubtraction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if ((operand1.getText().length() > 0) && (operand2.getText().length() > 0)) {
+                    double oper1 = Double.parseDouble(operand1.getText().toString());
+                    double oper2 = Double.parseDouble(operand2.getText().toString());
+
+                    double result = oper1 - oper2;
+                    txtResult.setText(Double.toString(result));
+                } else {
+                    Toast.makeText(MainActivity.this, "Please enter numbers in both operator fields", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        btnDivision.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if ((operand1.getText().length() > 0) && (operand2.getText().length() > 0)) {
+                    double oper1 = Double.parseDouble(operand1.getText().toString());
+                    double oper2 = Double.parseDouble(operand2.getText().toString());
+
+                    double result = oper1 / oper2;
+                    txtResult.setText(Double.toString(result));
+                } else {
+                    Toast.makeText(MainActivity.this, "Please enter numbers in both operator fields", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        btnMultiplication.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if ((operand1.getText().length() > 0) && (operand2.getText().length() > 0)) {
+                    double oper1 = Double.parseDouble(operand1.getText().toString());
+                    double oper2 = Double.parseDouble(operand2.getText().toString());
+
+                    double result = oper1 * oper2;
+                    txtResult.setText(Double.toString(result));
+                } else {
+                    Toast.makeText(MainActivity.this, "Please enter numbers in both operator fields", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
