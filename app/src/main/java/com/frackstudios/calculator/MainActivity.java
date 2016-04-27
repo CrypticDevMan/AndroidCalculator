@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSubtraction;
     private Button btnDivision;
     private Button btnMultiplication;
+    private Button btnClear;
     private TextView txtResult;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         btnMultiplication = (Button) findViewById(R.id.btnMultiplication);
         btnSubtraction = (Button) findViewById(R.id.btnSubtraction);
         txtResult = (TextView) findViewById(R.id.txtResult);
+        btnClear = (Button) findViewById(R.id.btnClear);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
@@ -104,6 +106,16 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Please enter numbers in both operator fields", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+        btnClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                operand1.setText("");
+                operand2.setText("");
+                txtResult.setText(R.string.clearFunction);
+                operand1.requestFocus();
             }
         });
 

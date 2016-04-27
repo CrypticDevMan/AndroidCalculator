@@ -3,4 +3,6 @@
     <string name="action_settings">Settings</string>
     <string name="enter_two_numbers">Enter two numbers</string>
     <string name="result_description">The Result</string>
+    <string name="clr">CLR</string>
+    <string name="clearFunction">0.00</string>
 </resources>
